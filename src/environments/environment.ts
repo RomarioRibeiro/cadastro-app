@@ -4,7 +4,7 @@
 
 export const environment = {
 
-  apiURL: 'http://localhost:8080/pessoas',
+  apiURL: ' https://cadastros-apis.herokuapp.com/pessoas',
   production: false
 };
 
