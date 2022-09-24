@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{ editando ? 'Edição' : 'Cadastro'}} Pessoa</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/pessoas"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (ngSubmit)="onSubmit()" #form="ngForm">
+    <ion-item>
+      <ion-label position="stacked">Nome</ion-label>
+      <ion-input [(ngModel)]="pessoa.nome" name="nome" #nome="ngModel" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Telefone</ion-label>
+      <ion-input placeholder="(43)9999-9999" minlength="11" maxlength="11" [(ngModel)]="pessoa.telefone" name="telefone"
+        #nome="ngModel"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label position="stacked">Rua</ion-label>
+      <ion-input [(ngModel)]="pessoa.logradouro" name="logradouro" #gas="ngModel" required></ion-input>
+
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label position="stacked">Numero da Casa</ion-label>
+      <ion-input [(ngModel)]="pessoa.numero" name="numero" #dataPaga="ngModel" required></ion-input>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Bairro</ion-label>
+      <ion-input [(ngModel)]="pessoa.bairro" name="bairro" #valors="ngModel" required></ion-input>
+
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Quantidade do Gás</ion-label>
+      <ion-input [(ngModel)]="pessoa.quantidade" name="quantidade" #valors="ngModel" required></ion-input>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Valor Pagar</ion-label>
+      <ion-input [(ngModel)]="pessoa.preco" name="preco" #valors="ngModel" required></ion-input>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Data do Fiado</ion-label>
+      <ion-input [(ngModel)]="pessoa.dataCadastro" name="dataCadastro" #valors="ngModel" required></ion-input>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Data do Pagamento</ion-label>
+
+      <ion-input  [(ngModel)]="pessoa.dataPagamento"  name="dataPagamento" #valors="ngModel" required></ion-input>
+    </ion-item>
+
+
+
+
+    <ion-button type="submit" class="ion-padding" [disabled]="form.invalid" color="primary" expand="block">
+      Salvar
+    </ion-button>
+  </form>
+</ion-content>
+

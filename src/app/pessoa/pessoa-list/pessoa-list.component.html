@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="medium">
+    <ion-title>Clientes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/folder/Inbox"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <ion-item *ngFor="let pessoa of pessoa">
+      <ion-label>
+        <h1>Nome: {{pessoa.nome}}</h1>
+        <p class="ion-text-wrap">Telefone: {{pessoa.telefone}}</p>
+        <p class="ion-text-wrap">Rua: {{pessoa.logradouro}}</p>
+        <h2 class="ion-text-wrap">Numero da Casa: {{pessoa.numero}}</h2>
+        <p class="ion-text-wrap">Bairro: {{pessoa.bairro}}</p>
+        <p class="ion-text-wrap">Quantidade Do Gás: {{pessoa.quantidade}}</p>
+        <p class="ion-text-wrap">Valor Pagar: {{pessoa.preco}}</p>
+        <p class="ion-text-wrap">Data do Fiado: {{pessoa.dataCadastro}}</p>
+        <p class="ion-text-wrap">Data do Pagamento: {{pessoa.dataPagamento}}</p>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button expand="block" color="primary"[routerLink]="['/pessoas', pessoa.id]">
+              <ion-icon slot="start" name="pencil"></ion-icon>
+              Editar
+            </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button expand="block" color="danger" fill="outline"
+            (click)="remove(pessoa)">
+              <ion-icon slot="start" name="trash"></ion-icon>
+              Excluir
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-label>
+    </ion-item>
+
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="primary">
+    <ion-fab-button [routerLink]="['novo']" routerLinkActive="router-link-active" >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
